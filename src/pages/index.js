@@ -1,20 +1,26 @@
 import React from "react"
 import { Link } from "gatsby"
 
+
+import ProjectsList from "../components/ProjectsList";
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <p className="sung-index-intro">
+      Sung Kyu Hong is a Front-End Developer based in New York. He is currently working at Avex and open for collaboration
+    </p>
+    <div className="row">
+      <div className="col">
+
+      </div>
+      <div class="col">
+        <a href="mailto: sungkyuhong93@gmail.com" className="header-projects-link">Contact</a>
+      </div>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <ProjectsList />
   </Layout>
 )
 
