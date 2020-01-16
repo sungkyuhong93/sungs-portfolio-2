@@ -26,7 +26,14 @@ const getImages = graphql`
           }
         }
       }
-      melo:file(relativePath:{eq:"melo.png"}) {
+      threelab:file(relativePath:{eq:"3lab.jpg"}) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      marchesa:file(relativePath:{eq:"marchesa.jpg"}) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_tracedSVG
@@ -40,59 +47,76 @@ const getImages = graphql`
           }
         }
       }
+      state:file(relativePath:{eq:"statecashmere.png"}) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
   }
 `
 
 const ProjectsList = () => {
-    const data = useStaticQuery(getImages);
+  const data = useStaticQuery(getImages);
 
-    return (
-        <div className="projects-list-wrap" id="projects">
+  return (
+    <div className="projects-list-wrap" id="projects">
 
-            <div>
-                <a target="_blank" href="https:/drink.haus">
-                    <BackgroundImage className="project-bg" fluid={data.fluid.childImageSharp.fluid}>
-                        <h1 className="project-wrap-header">Haus Apertif</h1>
-                    </BackgroundImage>
-                </a>
-            </div>
+      <div>
+        <a target="_blank" href="https:/drink.haus">
+          <BackgroundImage className="project-bg" fluid={data.fluid.childImageSharp.fluid}>
+            <h1 className="project-wrap-header">Haus Apertif</h1>
+          </BackgroundImage>
+        </a>
+      </div>
 
-            <div>
-                <a target="_blank" href="https:/drink.haus">
-                    <BackgroundImage className="project-bg" fluid={data.andbox.childImageSharp.fluid}>
-                        <h1 className="project-wrap-header">Andbox</h1>
-                    </BackgroundImage>
-                </a>
-            </div>
+      <div>
+        <a target="_blank" href="https:/drink.haus">
+          <BackgroundImage className="project-bg" fluid={data.state.childImageSharp.fluid}>
+            <h1 className="project-wrap-header">State Cashmere</h1>
+          </BackgroundImage>
+        </a>
+      </div>
 
-            <div>
-                <a target="_blank" href="https:/drink.haus">
-                    <BackgroundImage className="project-bg" fluid={data.essentials.childImageSharp.fluid}>
-                        <h1 className="project-wrap-header">Sung's Essentials</h1>
-                    </BackgroundImage>
-                </a>
-            </div>
+      <div>
+        <a target="_blank" href="https:/marchesa.com">
+          <BackgroundImage className="project-bg" fluid={data.marchesa.childImageSharp.fluid}>
+            <h1 className="project-wrap-header">Marchesa</h1>
+          </BackgroundImage>
+        </a>
+      </div>
 
-            <div>
-                <a target="_blank" href="https:/drink.haus">
-                    <BackgroundImage className="project-bg" fluid={data.melo.childImageSharp.fluid}>
-                        <h1 className="project-wrap-header">Meloway</h1>
-                    </BackgroundImage>
-                </a>
-            </div>
+      <div>
+        <a target="_blank" href="https:/3lab.com">
+          <BackgroundImage className="project-bg" fluid={data.threelab.childImageSharp.fluid}>
+            <h1 className="project-wrap-header">3LAB</h1>
+          </BackgroundImage>
+        </a>
+      </div>
 
-            <div>
-                <a target="_blank" href="https:/drink.haus">
-                    <BackgroundImage className="project-bg" fluid={data.weigh.childImageSharp.fluid}>
-                        <h1 className="project-wrap-header">The Weigh In</h1>
-                    </BackgroundImage>
-                </a>
-            </div>
+      <div>
+        <a target="_blank" href="https:/drink.haus">
+          <BackgroundImage className="project-bg" fluid={data.essentials.childImageSharp.fluid}>
+            <h1 className="project-wrap-header">Sung's Essentials</h1>
+          </BackgroundImage>
+        </a>
+      </div>
 
 
 
-        </div>
-    )
+      <div>
+        <a target="_blank" href="https:/drink.haus">
+          <BackgroundImage className="project-bg" fluid={data.weigh.childImageSharp.fluid}>
+            <h1 className="project-wrap-header">The Weigh In</h1>
+          </BackgroundImage>
+        </a>
+      </div>
+
+
+
+    </div >
+  )
 }
 
 export default ProjectsList;
