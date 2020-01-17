@@ -4,13 +4,13 @@ import logo from "../images/sung.png"
 
 const Header = () => {
     return (
-        <div class="row">
-            <div class="col">
+        <div className="row">
+            <div className="col">
                 <Link>
                     <img src={logo} />
                 </Link>
             </div>
-            <div class="col">
+            <div className="col">
                 <a className="header-projects-link" href="#projects">Projects</a>
             </div>
         </div>

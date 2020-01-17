@@ -1,6 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
-
 
 import ProjectsList from "../components/ProjectsList";
 import Layout from "../components/layout"
@@ -16,7 +14,7 @@ const IndexPage = () => (
       <div className="col">
 
       </div>
-      <div class="col">
+      <div className="col">
         <a href="mailto: sungkyuhong93@gmail.com" className="header-projects-link">Contact</a>
       </div>
     </div>
