@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'dm-med';
+  src: url('../fonts/DMsans-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'dm-bold';
+  src: url('../fonts/DMsans-Bold.ttf');
+}
+
+
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -5,12 +17,10 @@ html {
 
 body {
   margin: 0;
-  
+  font-family: 'dm-med';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
 
 h1,h2,h3,h4,h5,h6,p,a {
   margin: 0;
@@ -151,4 +161,8 @@ h1,h2,h3,h4,h5,h6,p,a {
     font-size: 40px;
   }
   
+}
+
+.built-with {
+  margin-top: 1rem;
 }

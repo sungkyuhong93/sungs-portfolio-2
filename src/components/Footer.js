@@ -1,4 +1,5 @@
 import React from 'react'
+import pdf from "./SungkyuHong_CV_2020.pdf";
 
 const Footer = () => {
     return (
@@ -13,7 +14,7 @@ const Footer = () => {
                 </div>
 
                 <div className="resume-dl">
-                    <a href="#">Resume Download</a>
+                    <a href={pdf}>Resume Download</a>
                 </div>
 
                 <div className="last-updated">
