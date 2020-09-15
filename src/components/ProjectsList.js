@@ -68,6 +68,20 @@ const getImages = graphql`
         }
       }
     }
+    floyd: file(relativePath: { eq: "money.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    chat: file(relativePath: { eq: "chat.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
   }
 `
 
@@ -83,17 +97,6 @@ const ProjectsList = () => {
             fluid={data.fluid.childImageSharp.fluid}
           >
             <h1 className="project-wrap-header">Haus Apertif</h1>
-          </BackgroundImage>
-        </a>
-      </div>
-
-      <div>
-        <a target="_blank" href="https://statecashmere.com/">
-          <BackgroundImage
-            className="project-bg"
-            fluid={data.state.childImageSharp.fluid}
-          >
-            <h1 className="project-wrap-header">State Cashmere</h1>
           </BackgroundImage>
         </a>
       </div>
@@ -119,7 +122,7 @@ const ProjectsList = () => {
           </BackgroundImage>
         </a>
       </div>
-
+      {/*
       <div>
         <a target="_blank" href="https://3lab.com">
           <BackgroundImage
@@ -130,6 +133,7 @@ const ProjectsList = () => {
           </BackgroundImage>
         </a>
       </div>
+      */}
 
       <div>
         <a target="_blank" href="https://sungs-essentials.herokuapp.com/">
@@ -153,16 +157,56 @@ const ProjectsList = () => {
         <p>**work in progress**</p>
         <p className="built-with">Built with Gatsby JS + Contentful</p>
       </div>
+       */}
 
       <div>
         <a target="_blank" href="https://the-weigh-in-shop.netlify.com/">
-          <BackgroundImage className="project-bg" fluid={data.weighshop.childImageSharp.fluid}>
+          <BackgroundImage
+            className="project-bg"
+            fluid={data.weighshop.childImageSharp.fluid}
+          >
             <h1 className="project-wrap-header">The Weigh In Shop</h1>
           </BackgroundImage>
         </a>
         <p className="built-with">Built with Gatsby JS / Contentful / Redux</p>
       </div>
-    */}
+
+      <div>
+        <a target="_blank" href="https://sleepy-brook-00076.herokuapp.com/">
+          <BackgroundImage
+            className="project-bg"
+            fluid={data.floyd.childImageSharp.fluid}
+          >
+            <h1 className="project-wrap-header">Boxrec</h1>
+          </BackgroundImage>
+        </a>
+        <p className="built-with">
+          Built with Mongodb / Express / React / Node
+        </p>
+      </div>
+
+      <div>
+        <a target="_blank" href="https://whats-app-clone-5c5b6.web.app/">
+          <BackgroundImage
+            className="project-bg"
+            fluid={data.chat.childImageSharp.fluid}
+          >
+            <h1 className="project-wrap-header">WhatsApp clone</h1>
+          </BackgroundImage>
+        </a>
+        <p className="built-with">Built with React / Firebase</p>
+      </div>
+
+      <div>
+        <a target="_blank" href="https://statecashmere.com/">
+          <BackgroundImage
+            className="project-bg"
+            fluid={data.state.childImageSharp.fluid}
+          >
+            <h1 className="project-wrap-header">State Cashmere</h1>
+          </BackgroundImage>
+        </a>
+      </div>
     </div>
   )
 }
