@@ -8,7 +8,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <p className="sung-index-intro">
-      Sung Kyu Hong is a Front-End Developer based in New York. He is currently working at Avex and open for collaboration
+      Sung Kyu Hong is a Front-End Engineer based in New York. He is currently working at Avex and open for collaboration
     </p>
     <div className="row">
       <div className="col">
